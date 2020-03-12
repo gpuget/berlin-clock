@@ -14,11 +14,11 @@ public class BerlinClockConverter {
     }
 
     private static String toBerlinClock(int hour, int minute, int second) {
-        return new StringJoiner(DELIMITER).add(SecondLampConverter.INSTANCE.convert(second))
-                                          .add(FiveHoursRowConverter.INSTANCE.convert(hour))
-                                          .add(SingleHoursRowConverter.INSTANCE.convert(hour))
-                                          .add(FiveMinutesRowConverter.INSTANCE.convert(minute))
-                                          .add(SingleMinutesRowConverter.INSTANCE.convert(minute))
+        return new StringJoiner(DELIMITER).add(SecondLampConverter.INSTANCE.convert(second))        //     O
+                                          .add(FiveHoursRowConverter.INSTANCE.convert(hour))        // =  =  =  =
+                                          .add(SingleHoursRowConverter.INSTANCE.convert(hour))      // =  =  =  =
+                                          .add(FiveMinutesRowConverter.INSTANCE.convert(minute))    // ..o..o..o..
+                                          .add(SingleMinutesRowConverter.INSTANCE.convert(minute))  // -  -  -  -
                                           .toString();
     }
 }
